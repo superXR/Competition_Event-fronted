@@ -4,7 +4,7 @@
  * @文件描述: 部门管理服务
  * @LastEditors: Please set LastEditors
  * @Date: 2019-09-13 07:27:24
- * @LastEditTime: 2020-04-07 21:05:02
+ * @LastEditTime: 2020-04-26 17:12:56
  */
 import { action } from 'mobx';
 import HttpClient from '../utils/HttpClient';
@@ -33,7 +33,7 @@ export class EventService {
     this.store.pageData = initalPaginationValue;
     try {
       const result = await this.http.postJSON<Pagination<EventModel>>(
-        `${BACKEND_URL}/event/list`,
+        `${BACKEND_URL}/competition_event/list`,
         searchProps,
       );
       this.store.loading = false;
@@ -55,7 +55,7 @@ export class EventService {
   public async update(data: EventEditModel): Promise<boolean> {
     this.store.loading = true;
     try {
-      const result = await this.http.postJSON<String>(`${BACKEND_URL}/event/update`, data);
+      const result = await this.http.postJSON<String>(`${BACKEND_URL}/competition_event/update`, data);
       this.store.loading = false;
       if (result.success) {
         return true;
@@ -73,7 +73,7 @@ export class EventService {
   public async add(data: EventEditModel): Promise<boolean> {
     this.store.loading = true;
     try {
-      const result = await this.http.postJSON<String>(`${BACKEND_URL}/event/add`, data);
+      const result = await this.http.postJSON<String>(`${BACKEND_URL}/competition_event/add`, data);
       this.store.loading = false;
       if (result.success) {
         return true;
@@ -91,7 +91,7 @@ export class EventService {
   public async delete(codeList: string[]): Promise<boolean> {
     this.store.loading = true;
     try {
-      const result = await this.http.postJSON<String>(`${BACKEND_URL}/event/delete`, codeList);
+      const result = await this.http.postJSON<String>(`${BACKEND_URL}/competition_event/delete`, codeList);
       this.store.loading = false;
       if (result.success) {
         return true;

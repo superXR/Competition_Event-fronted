@@ -4,7 +4,7 @@
  * @作者: 李洪文
  * @LastEditors: Please set LastEditors
  * @Date: 2019-05-09 15:40:17
- * @LastEditTime: 2020-04-08 10:38:00
+ * @LastEditTime: 2020-04-26 23:15:44
  */
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
@@ -43,12 +43,12 @@ export interface EventPageProps {
 @observer
 class EventPage extends React.Component<EventPageProps> {
   private columns = [
-    { title: '比赛项目编码', dataIndex: 'eventCode' },
-    { title: '比赛项目名称', dataIndex: 'eventName' },
+    { title: '比赛项目编码', dataIndex: 'competitionEventCode' },
+    { title: '比赛项目名称', dataIndex: 'competitionEventName' },
     { title: '开始时间', dataIndex: 'planStartAt' },
     { title: '结束时间', dataIndex: 'planEndAt' },
-    { title: '组别', dataIndex: 'suitType' },
-    { title: '组别名称', dataIndex: 'suitTypeDesc' },
+    { title: '组别', dataIndex: 'suiteType' },
+    { title: '组别名称', dataIndex: 'suiteTypeDesc' },
     { title: '状态', dataIndex: 'status' },
     { title: '状态描述', dataIndex: 'statusDesc' },
     { title: '创建时间', dataIndex: 'createdAt' },
@@ -72,7 +72,7 @@ class EventPage extends React.Component<EventPageProps> {
           <Divider type="vertical" />
           <a
             onClick={() => {
-              this.handleDelete([record.eventCode]);
+              this.handleDelete([record.competitionEventCode]);
             }}
           >
             删除
@@ -121,7 +121,7 @@ class EventPage extends React.Component<EventPageProps> {
           dataSource={list}
           current={page}
           total={total}
-          genRowKey={(record: EventModel) => `${record.eventCode}`}
+          genRowKey={(record: EventModel) => `${record.competitionEventCode}`}
           onPagination={(current: number) => {
             const searchProps = {
               ...this.props.searchProps,
@@ -130,7 +130,7 @@ class EventPage extends React.Component<EventPageProps> {
             eventService.fetchPageData(searchProps);
           }}
           onRow={(record: EventModel) => ({
-            onClick: () => selectRow([`${record.eventCode}`]),
+            onClick: () => selectRow([`${record.competitionEventCode}`]),
           })}
           rowSelection={{
             columnTitle: '选择',
@@ -203,7 +203,7 @@ class EventPage extends React.Component<EventPageProps> {
     if (this.props.event) {
       result = this.props.eventService.update({
         ...data,
-        eventName: this.props.event.eventName,
+        competitionEventCode: this.props.event.competitionEventCode,
       });
     } else {
       result = this.props.eventService.add(data);

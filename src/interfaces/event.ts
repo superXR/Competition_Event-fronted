@@ -3,24 +3,24 @@ import { PAGE_SIZE } from './common';
 /*
  * @Author: 徐瑞
  * @Date: 2020-04-06 20:32:06
- * @LastEditTime: 2020-04-23 23:29:56
+ * @LastEditTime: 2020-04-26 23:39:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \labs-fronted\src\interfaces\event.ts
  */
 export interface EventModel {
   // 比赛项目编码
-  eventCode: string;
+  competitionEventCode: string;
   // 比赛项目名称
-  eventName: string;
+  competitionEventName: string;
   // 开始时间
   planStartAt: string;
   // 结束时间
-  planEndAt: number;
+  planEndAt: string;
   // 组别
-  suitType: number;
+  suiteType: number;
   // 组别名称
-  suitTypeDesc: string;
+  suiteTypeDesc: string;
   // 状态
   status: number;
   // 状态描述
@@ -36,31 +36,29 @@ export interface EventModel {
 }
 
 export interface EventEditModel {
+  // 比赛项目编码
+  competitionEventCode?: string;
   // 比赛项目名称
-  eventName?: string;
+  competitionEventName?: string;
   // 开始时间
   planStartAt?: string;
   // 结束时间
-  planEndAt?: number;
+  planEndAt?: string;
   // 组别
-  suitType?: number;
+  suiteType?: number;
   // 状态
   status?: number;
 }
 
 export interface EventSearchProps {
   // 比赛项目名称
-  eventName?: string;
-  // 比赛项目编码
-  eventCode?: string;
-
+  competitionEventName?: string;
   page?: number;
   pageSize?: number;
 }
 
 export const defaultEventSearchProps: EventSearchProps = {
-  eventName: undefined,
-  eventCode: undefined,
+  competitionEventName: undefined,
   page: 1,
   pageSize: PAGE_SIZE,
 };

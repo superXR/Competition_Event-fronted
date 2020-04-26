@@ -4,7 +4,7 @@
  * @文件描述: 部门信息表单
  * @LastEditors: Please set LastEditors
  * @Date: 2019-10-05 22:46:43
- * @LastEditTime: 2020-04-09 22:48:05
+ * @LastEditTime: 2020-04-26 21:04:26
  */
 import * as React from 'react';
 import Form, { FormComponentProps } from 'antd/lib/form';
@@ -45,7 +45,7 @@ class UserForm extends React.PureComponent<UserFormProps> {
     return (
       <Form layout="horizontal" className={styles.form}>
         <Form.Item label="比赛项目名称" {...FILTER_FORM_LAYOUT}>
-          {getFieldDecorator('eventName', {
+          {getFieldDecorator('competitionEventName', {
             rules: [
               {
                 required: true,
@@ -78,10 +78,10 @@ class UserForm extends React.PureComponent<UserFormProps> {
         </Form.Item>
 
         <Form.Item label="组别" {...FILTER_FORM_LAYOUT}>
-          {getFieldDecorator('suitType', {
+          {getFieldDecorator('suiteType', {
             rules: [
               {
-                required: false,
+                required: true,
                 message: '请输入组别',
               },
             ],

@@ -3,7 +3,7 @@ import { PAGE_SIZE } from './common';
 /*
  * @Author: 徐瑞
  * @Date: 2020-04-06 20:32:06
- * @LastEditTime: 2020-04-26 23:39:47
+ * @LastEditTime: 2020-04-27 13:37:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \labs-fronted\src\interfaces\event.ts
@@ -18,13 +18,9 @@ export interface EventModel {
   // 结束时间
   planEndAt: string;
   // 组别
-  suiteType: number;
-  // 组别名称
-  suiteTypeDesc: string;
+  suiteType: string;
   // 状态
-  status: number;
-  // 状态描述
-  statusDesc: string;
+  status: string;
   // 创建时间
   createdAt: string;
   // 创建人
@@ -45,9 +41,9 @@ export interface EventEditModel {
   // 结束时间
   planEndAt?: string;
   // 组别
-  suiteType?: number;
+  suiteType?: string;
   // 状态
-  status?: number;
+  status?: string;
 }
 
 export interface EventSearchProps {

@@ -4,7 +4,7 @@
  * @作者: 李洪文
  * @LastEditors: Please set LastEditors
  * @Date: 2019-05-09 15:40:17
- * @LastEditTime: 2020-04-26 23:15:44
+ * @LastEditTime: 2020-04-27 14:50:56
  */
 import * as React from 'react';
 import { observer, inject } from 'mobx-react';
@@ -48,9 +48,7 @@ class EventPage extends React.Component<EventPageProps> {
     { title: '开始时间', dataIndex: 'planStartAt' },
     { title: '结束时间', dataIndex: 'planEndAt' },
     { title: '组别', dataIndex: 'suiteType' },
-    { title: '组别名称', dataIndex: 'suiteTypeDesc' },
     { title: '状态', dataIndex: 'status' },
-    { title: '状态描述', dataIndex: 'statusDesc' },
     { title: '创建时间', dataIndex: 'createdAt' },
     { title: '创建人', dataIndex: 'createdBy' },
     { title: '更新时间', dataIndex: 'updatedAt' },

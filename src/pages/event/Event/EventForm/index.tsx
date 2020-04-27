@@ -4,12 +4,12 @@
  * @文件描述: 部门信息表单
  * @LastEditors: Please set LastEditors
  * @Date: 2019-10-05 22:46:43
- * @LastEditTime: 2020-04-26 21:04:26
+ * @LastEditTime: 2020-04-27 14:52:09
  */
 import * as React from 'react';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import { FILTER_FORM_LAYOUT } from '@/constant';
-import { Input } from 'antd';
+import { Input,Select } from 'antd';
 import styles from './index.scss';
 
 import { compose, withState } from 'recompose';
@@ -82,10 +82,14 @@ class UserForm extends React.PureComponent<UserFormProps> {
             rules: [
               {
                 required: true,
-                message: '请输入组别',
+                message: '请选择组别',
               },
             ],
-          })(<Input placeholder="请输入" />)}
+          })(<Select  style={{ width: 120 }}>
+            <Option value="成年组">成年组</Option>
+            <Option value="青少年组">青少年组</Option>
+            <Option value="老年组">老年组</Option>
+            </Select>)}
         </Form.Item>
 
         <Form.Item label="状态" {...FILTER_FORM_LAYOUT}>
@@ -96,7 +100,11 @@ class UserForm extends React.PureComponent<UserFormProps> {
                 message: '请输入状态',
               },
             ],
-          })(<Input placeholder="请输入" />)}
+          })(<Select  style={{ width: 120 }}>
+          <Option value="未开始">未开始</Option>
+          <Option value="进行中">进行中</Option>
+          <Option value="已结束">已结束</Option>
+          </Select>)}
         </Form.Item>
 
         <ModalButtons

@@ -3,7 +3,7 @@ import { PAGE_SIZE } from './common';
 /*
  * @Author: 徐瑞
  * @Date: 2020-04-06 20:32:06
- * @LastEditTime: 2020-04-27 13:37:20
+ * @LastEditTime: 2020-05-02 14:32:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \labs-fronted\src\interfaces\event.ts
@@ -47,6 +47,8 @@ export interface EventEditModel {
 }
 
 export interface EventSearchProps {
+  // 比赛项目编码
+  competitionEventCode?: string;
   // 比赛项目名称
   competitionEventName?: string;
   page?: number;
@@ -54,6 +56,7 @@ export interface EventSearchProps {
 }
 
 export const defaultEventSearchProps: EventSearchProps = {
+  competitionEventCode: undefined,
   competitionEventName: undefined,
   page: 1,
   pageSize: PAGE_SIZE,

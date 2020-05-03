@@ -4,7 +4,7 @@
  * @文件描述: 部门信息表单
  * @LastEditors: Please set LastEditors
  * @Date: 2019-10-05 22:46:43
- * @LastEditTime: 2020-05-01 17:11:07
+ * @LastEditTime: 2020-05-03 17:47:28
  */
 import * as React from 'react';
 import Form, { FormComponentProps } from 'antd/lib/form';
@@ -44,6 +44,7 @@ class UserForm extends React.PureComponent<UserFormProps> {
   };
 
   public render() {
+    const { Option } = Select;
     const { getFieldDecorator } = this.props.form;
     return (
       <Form layout="horizontal" className={styles.form}>

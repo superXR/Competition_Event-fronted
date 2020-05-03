@@ -3,7 +3,7 @@ import { PAGE_SIZE } from './common';
 /*
  * @Author: 徐瑞
  * @Date: 2020-04-06 20:32:06
- * @LastEditTime: 2020-05-02 14:32:22
+ * @LastEditTime: 2020-05-03 17:31:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \labs-fronted\src\interfaces\event.ts
